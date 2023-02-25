@@ -6,12 +6,14 @@ import "./App.css";
 
 //This is a dummy list to populate the website, eventually this will be replaced with the actual feedback logic
 const items = ['Item 1', 'Item 2', 'Item 3'];
+//control bar height as percentage of total div
+let bar_height = 100
 
 const App = () => {
   return (
     <div className="App">
       <div className="main-content">
-        <Navigation />
+        <Navigation bar_height={bar_height} />
         <Chat />
         <Feedback title="Feedback" items={items} />
       </div>
