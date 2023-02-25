@@ -1,0 +1,28 @@
+.navigation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a;
+    color: #fff;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100px;
+  }
+  
+  .navigation-header {
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .navigation-header img {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .navigation-indicator {
+    height: 10px;
+    width: 100%;
+    background-color: #f44336;
+  }
+  

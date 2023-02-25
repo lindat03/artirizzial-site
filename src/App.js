@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navigation from "./components/Navigation/Navigation.jsx";
+import Chat from "./components/Chat/Chat.jsx";
+import Feedback from "./components/Feedback/Feedback.jsx";
+import "./App.css";
 
-function App() {
+//This is a dummy list to populate the website, eventually this will be replaced with the actual feedback logic
+const items = ['Item 1', 'Item 2', 'Item 3'];
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="main-content">
+        <Navigation />
+        <Chat />
+        <Feedback title="Feedback" items={items} />
+      </div>
     </div>
   );
 }

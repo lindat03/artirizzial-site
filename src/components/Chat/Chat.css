@@ -1,0 +1,77 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 20px;
+  width: 100%;
+}
+
+.message-history {
+  overflow-y: scroll;
+  height: 100%;
+  margin-bottom: 10px;
+}
+
+.message {
+  background-color: #f1f0f0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.input-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 80px); /* Adjust to your preferred height */
+
+  /* Add margin to the right to make room for the Navigation component */
+  margin-right: 200px;
+  padding: 20px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.chat-history {
+  overflow-y: scroll;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #eee;
+  border-radius: 5px;
+}
