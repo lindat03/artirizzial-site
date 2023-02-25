@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/artirizzial-site/static/css/main.4d69a568.css",
-    "main.js": "/artirizzial-site/static/js/main.0dc43738.js",
+    "main.css": "/artirizzial-site/static/css/main.86f5b058.css",
+    "main.js": "/artirizzial-site/static/js/main.0472076d.js",
     "index.html": "/artirizzial-site/index.html",
-    "main.4d69a568.css.map": "/artirizzial-site/static/css/main.4d69a568.css.map",
-    "main.0dc43738.js.map": "/artirizzial-site/static/js/main.0dc43738.js.map"
+    "main.86f5b058.css.map": "/artirizzial-site/static/css/main.86f5b058.css.map",
+    "main.0472076d.js.map": "/artirizzial-site/static/js/main.0472076d.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d69a568.css",
-    "static/js/main.0dc43738.js"
+    "static/css/main.86f5b058.css",
+    "static/js/main.0472076d.js"
   ]
 }
