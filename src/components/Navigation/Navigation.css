@@ -21,7 +21,7 @@
   }
   
   .navigation-indicator {
-    height: 10px;
+    /* height: 10px; */
     width: 100%;
     background-color: #f44336;
   }
