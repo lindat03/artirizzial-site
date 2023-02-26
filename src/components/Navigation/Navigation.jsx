@@ -2,7 +2,6 @@ import React from 'react';
 import './Navigation.css';
 
 function Navigation({bar_height}) {
-  console.log(bar_height)
   return (
     <div className="navigation-container">
       <div className="navigation-header">

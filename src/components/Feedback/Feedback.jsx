@@ -3,10 +3,6 @@ import './Feedback.css';
 
 const Feedback = ({ title, items }) => {
   return (
-    
-
-
-    
     <div className="list">
       <h2 className="list-title">{title}</h2>
       <ul className="list-items">
