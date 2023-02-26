@@ -9,6 +9,10 @@ body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
   letter-spacing: 3px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .App {
@@ -21,4 +25,17 @@ body {
   display: flex;
   flex-grow: 1;
   padding: 3vh;
+  padding-top: 1vh;
+}
+
+.logo-img{
+  width:  5%;
+  margin-left: 20px;
+  height: auto;
+  object-fit: contain;
+}
+
+.header-div{
+  display: flex;
+  flex-direction: row;
 }
