@@ -11,12 +11,15 @@ let bar_height = 100
 
 const App = () => {
   useEffect( () => {
-    fetch('https://artirizzial-backend.herokuapp.com/post', {
+    //http://127.0.0.1:5000/post
+    //https://artirizzial-backend.herokuapp.com/post
+    
+    fetch('http://127.0.0.1:5000/post', {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
       },
-      body: "hello",
+      body: "Person 1: Hey there, cutie! \nPerson 2: hi there, how's your day going?\nPerson 1: better now that i'm talking to u",
     })
     .then(res => res.json())
     .then(res => console.log(res))
