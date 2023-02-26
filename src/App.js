@@ -19,19 +19,30 @@ const App = () => {
   useEffect( () => {
     //don't run if not enough data, less than 3 lines of dialouge or if coming from you
     let request_length = requests.length
-    if (request_length < 3 || requests[request_length - 1][1] == 1){
+    if (request_length < 3 || requests[request_length - 1].substring(0,8) == "Person 2"){
       return //exit function
     }
     
-    fetch('http://localhost:5000/bar', {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain",
-      },
-      body: request_length[request_length - 1][0], //get latest request
-    })
-    .then(response => response.json())
-    .then();
+    // fetch('http://localhost:5000/bar', {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "text/plain",
+    //   },
+    //   body: requests[request_length - 1][0], //get latest request
+    // })
+    // .then(response => response.json())
+    // .then();
+
+    const hash = (string) => {
+        let sum = 0;
+        for(let i = 0; i < string.length; i++){
+            sum += string.charCodeAt(i);
+        }
+        return sum * 1278 % 97;
+    }
+
+    console.log(requests[request_length-1])
+    setBarHeight(hash(requests[request_length-1]));
 
     let string = requests.join('\n');
     //'https://artirizzial-backend.herokuapp.com/post'
