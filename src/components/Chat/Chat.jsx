@@ -47,10 +47,6 @@ function Chat({ callBack }) {
         })}
       </div>
       <form onSubmit={handleSubmit} className="input-form">
-        <button className="import-photos-btn" type="button">
-          {/* <img src="../../../images/attach-images.png" alt="Select Photos"></img> */}
-          Import Photos
-        </button>
           <div className="input-container-column">
             <input
               className="them-input"

@@ -23,7 +23,7 @@ const App = () => {
     }
     let string = requests.join('\n');
     //'https://artirizzial-backend.herokuapp.com/post'
-    fetch('http://localhost:5000/post', {
+    fetch('http://127.0.0.1:5000/post', {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
@@ -36,7 +36,10 @@ const App = () => {
   
   return (
     <div className="App">
-      <h1 className="header-title">artirizzial</h1>
+      <div className="header-div">
+        <img className="logo-img" src="https://cdn.discordapp.com/attachments/1025635926069739561/1079361013243191376/Slice_3.png" alt="logo"></img>
+        <h1 className="header-title">artirizzial</h1>
+      </div>
       <div className="main-content">
         <Navigation bar_height={barHeight} />
         <Chat callBack={getMessages}/>
