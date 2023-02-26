@@ -63,7 +63,7 @@ function Chat({ callBack }) {
               onChange={handleMeInputChange}
             />
         </div>
-        <button type="submit" className="submit-btn">Send</button>
+        <button type="submit" className="submit-btn">➤</button>
       </form>
     </div>
   );
