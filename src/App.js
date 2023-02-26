@@ -43,7 +43,7 @@ const App = () => {
       <div className="main-content">
         <Navigation bar_height={barHeight} />
         <Chat callBack={getMessages}/>
-        <Feedback title="good responses" items={reccs} />
+        <Feedback title="'rizz'ponses" items={reccs} />
       </div>
     </div>
   );
