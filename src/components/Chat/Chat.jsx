@@ -15,16 +15,12 @@ function Chat() {
   };
 
   const handleSubmit = (event) => {
-    console.log('submit button pressed')
     event.preventDefault();
     if(themInputValue && meInputValue){
-      console.log('both values found')
       setMessages([...messages, [themInputValue, 0], [meInputValue, 1]]);
     } else if(themInputValue){
-      console.log('them input found')
       setMessages([...messages, [themInputValue, 0]]);
     } else if(meInputValue){
-      console.log('me input found')
       setMessages([...messages, [meInputValue, 1]])
     }
     setThemInputValue("");
@@ -46,31 +42,28 @@ function Chat() {
         })}
       </div>
       <form onSubmit={handleSubmit} className="input-form">
-        <input
-          className="them-input"
-          type="text"
-          placeholder="Type your love interest's message here..."
-          value={themInputValue}
-          onChange={handleThemInputChange}
-        />
-        <input
-          className="me-input"
-          type="text"
-          placeholder="Type your message here..."
-          value={meInputValue}
-          onChange={handleMeInputChange}
-        />
-        <button type="submit">Send</button>
+        <button className="import-photos-btn" type="button">
+          {/* <img src="../../../images/attach-images.png" alt="Select Photos"></img> */}
+          Import Photos
+        </button>
+          <div className="input-container-column">
+            <input
+              className="them-input"
+              type="text"
+              placeholder="Type your love interest's message here..."
+              value={themInputValue}
+              onChange={handleThemInputChange}
+            />
+            <input
+              className="me-input"
+              type="text"
+              placeholder="Type your message here..."
+              value={meInputValue}
+              onChange={handleMeInputChange}
+            />
+        </div>
+        <button type="submit" className="submit-btn">Send</button>
       </form>
-      {/* <form className="me-input-form">
-        <input
-          type="text"
-          placeholder="Type your message here..."
-          value={meInputValue}
-          onChange={handleMeInputChange}
-        />
-        <button type="submit">Send</button>
-      </form> */}
     </div>
   );
 }
