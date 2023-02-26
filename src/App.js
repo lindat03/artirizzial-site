@@ -17,10 +17,22 @@ const App = () => {
   }
 
   useEffect( () => {
-    //don't run if not enough data, less than 3 lines of dialouge
-    if (requests.length < 3 || requests[requests.length - 1][1] == 1){
-      return
+    //don't run if not enough data, less than 3 lines of dialouge or if coming from you
+    let request_length = requests.length
+    if (request_length < 3 || requests[request_length - 1][1] == 1){
+      return //exit function
     }
+    
+    fetch('http://localhost:5000/bar', {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain",
+      },
+      body: request_length[request_length - 1][0], //get latest request
+    })
+    .then(response => response.json())
+    .then();
+
     let string = requests.join('\n');
     //'https://artirizzial-backend.herokuapp.com/post'
     fetch('http://localhost:5000/post', {
