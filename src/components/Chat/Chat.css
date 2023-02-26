@@ -23,7 +23,8 @@
   margin-bottom: 10px;
   margin-left: auto;
   width: fit-content;
-  padding: 10px;
+  font-size: 16px;
+  padding: 14px;
   text-align: right;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -36,7 +37,8 @@
   margin-bottom: 10px;
   margin-right: auto;
   width: fit-content;
-  padding: 10px;
+  font-size: 16px;
+  padding: 14px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   /* display: inline-block;
@@ -92,16 +94,23 @@ input[type="text"] {
 button[type="submit"] {
   background-color: #FF6A5C;
   color: white;
-  font-size: 16px;
+  font-size: 30px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   height: 60%;
+  width: fit-content;
 }
 
 button[type="submit"]:hover {
   background-color: #f9897f;
+}
+
+.send-icon{
+  width:50%;
+  height: auto;
+
 }
 
 .chat-container {
