@@ -7,7 +7,7 @@ import "./App.css";
 //This is a dummy list to populate the website, eventually this will be replaced with the actual feedback logic
 const items = ['Item 1', 'Item 2', 'Item 3'];
 //control bar height as percentage of total div
-let bar_height = 50;
+let bar_height = 100
 
 const App = () => {
   useEffect( () => {
@@ -24,10 +24,11 @@ const App = () => {
   
   return (
     <div className="App">
+      <h1 className="header-title">artirizzial</h1>
       <div className="main-content">
         <Navigation bar_height={bar_height} />
         <Chat />
-        <Feedback title="Feedback" items={items} />
+        <Feedback title="good responses" items={items} />
       </div>
     </div>
   );

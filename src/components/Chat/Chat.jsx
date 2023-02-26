@@ -2,36 +2,67 @@ import React, { useState } from "react";
 import './Chat.css';
 
 function Chat() {
-  const [inputValue, setInputValue] = useState("");
+  const [themInputValue, setThemInputValue] = useState("");
+  const [meInputValue, setMeInputValue] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const handleThemInputChange = (event) => {
+    setThemInputValue(event.target.value);
+  };
+
+  const handleMeInputChange = (event) => {
+    setMeInputValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setMessages([...messages, inputValue]);
-    setInputValue("");
+    if(themInputValue && meInputValue){
+      setMessages([...messages, [themInputValue, 0], [meInputValue, 1]]);
+    } else if(themInputValue){
+      setMessages([...messages, [themInputValue, 0]]);
+    } else if(meInputValue){
+      setMessages([...messages, [meInputValue, 1]])
+    }
+    setThemInputValue("");
+    setMeInputValue("");
   };
 
   return (
     <div className="chat">
       <div className="message-history">
-        {messages.map((message, index) => (
-          <div key={index} className="message">
-            {message}
-          </div>
-        ))}
+        {messages.map((message, index) => {
+          const userIdentifier = message[1];
+          const messageContent = message[0];
+          const messageStyle = userIdentifier === 0 ? 'them-message' : 'me-message';
+          return (
+            <div key={index} className={messageStyle}>
+              {messageContent}
+            </div>
+          );
+        })}
       </div>
       <form onSubmit={handleSubmit} className="input-form">
-        <input
-          type="text"
-          placeholder="Type your message here..."
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Send</button>
+        <button className="import-photos-btn" type="button">
+          {/* <img src="../../../images/attach-images.png" alt="Select Photos"></img> */}
+          Import Photos
+        </button>
+          <div className="input-container-column">
+            <input
+              className="them-input"
+              type="text"
+              placeholder="Type your love interest's message here..."
+              value={themInputValue}
+              onChange={handleThemInputChange}
+            />
+            <input
+              className="me-input"
+              type="text"
+              placeholder="Type your message here..."
+              value={meInputValue}
+              onChange={handleMeInputChange}
+            />
+        </div>
+        <button type="submit" className="submit-btn">Send</button>
       </form>
     </div>
   );
