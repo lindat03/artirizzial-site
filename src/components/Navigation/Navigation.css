@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:wght@500&family=Poppins:wght@600&display=swap');
+
+
 .navigation-container{
   display: flex;
   flex-direction: column;
@@ -47,5 +50,6 @@
     margin-bottom: 5px;
     font-size: 13px;
     color: #056571;
+    font-family: 'Poppins', sans-serif;
   }
   
