@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Chat.css';
 
-function Chat() {
+function Chat({ callBack }) {
   const [themInputValue, setThemInputValue] = useState("");
   const [meInputValue, setMeInputValue] = useState("");
   const [messages, setMessages] = useState([]);
+
+  useEffect( () => {
+    callBack(messages);
+  }, [messages]);
+
 
   const handleThemInputChange = (event) => {
     setThemInputValue(event.target.value);
