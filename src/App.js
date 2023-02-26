@@ -11,22 +11,27 @@ const App = () => {
   const [requests, setRequests] = useState([]);
   const getMessages = (messages) => {
     let list = messages.map( (element) => {
-      return (element[1]==0 ? "Person 1: " : "Person 2: ") + element[0];
+      return (element[1]===0 ? "Person 1: " : "Person 2: ") + element[0];
     });
     setRequests(list);
   }
 
   useEffect( () => {
+    //don't run if not enough data, less than 3 lines of dialouge
+    if (requests.length < 3 || requests[requests.length - 1][1] == 1){
+      return
+    }
     let string = requests.join('\n');
-    fetch('https://artirizzial-backend.herokuapp.com/post', {
+    //'https://artirizzial-backend.herokuapp.com/post'
+    fetch('http://localhost:5000/post', {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
       },
-      body: "hello",
+      body: string,
     })
-    .then(res => res.json())
-    .then(res => console.log(res['content']))
+    .then(response =>response.json())
+    .then(data => setReccs(data['content'].split("\n").filter(n => n)));
   }, [requests]);
   
   return (
