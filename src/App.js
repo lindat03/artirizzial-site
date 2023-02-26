@@ -18,12 +18,12 @@ const App = () => {
 
   useEffect( () => {
     let string = requests.join('\n');
-    fetch('http://localhost:5000/post', {
+    fetch('https://artirizzial-backend.herokuapp.com/post', {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
       },
-      body: {string},
+      body: "hello",
     })
     .then(res => res.json())
     .then(res => console.log(res['content']))
